@@ -1,0 +1,61 @@
+:root {
+  --blue: #1565dd;
+  --grey: #333333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  max-width: max-content;
+}
+
+.popup {
+  background-color: var(--blue);
+  color: white;
+}
+
+.tabs-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: var(--grey);
+  list-style: none;
+  font-size: 2rem;
+}
+
+.tabs-menu button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  transition: background-color 250ms;
+}
+
+.tabs-menu button:hover {
+  background-color: #555;
+}
+
+.tabs-menu button.active {
+  background-color: var(--blue);
+}
+
+.tabs-content {
+  max-height: 500px;
+}
+
+.tab {
+  display: none;
+  height: 400px;
+}
+
+.tab.active {
+  display: block;
+}
