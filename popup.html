@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Distract Block</title>
-    <link rel="stylesheet" href="./popup.css" />
-  </head>
-  <body>
-    <div class="popup">
-      <div class="tabs-menu">
-        <nav>
-          <ul>
-            <li>
-              <button class="tab-button active" id="todo-button">Todo</button>
-            </li>
-            <li><button class="tab-button" id="timer-button">Timer</button></li>
-            <li><button class="tab-button" id="sites-button">Sites</button></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="tabs-content">
-        <div class="tab active" id="todo-tab"></div>
-        <div class="tab" id="timer-tab"></div>
-        <div class="tab" id="sites-tab"></div>
-      </div>
-    </div>
-    <script type="text/javascript" src="./popup.js"></script>
-  </body>
+    <head>
+        <title>Distract Block</title>
+        <link rel="stylesheet" href="./popup.css" />
+    </head>
+    <body>
+        <div class="popup">
+            <div class="tabs-menu">
+                <nav>
+                    <ul>
+                        <li>
+                            <button
+                                class="tab-button active"
+                                id="todo-button"
+                                data-activates="todo-tab"
+                            >
+                                Todo
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="tab-button"
+                                id="timer-button"
+                                data-activates="timer-tab"
+                            >
+                                Timer
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="tab-button"
+                                id="sites-button"
+                                data-activates="sites-tab"
+                            >
+                                Sites
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tabs-content">
+                <div class="tab active" id="todo-tab"></div>
+                <div class="tab" id="timer-tab"></div>
+                <div class="tab" id="sites-tab"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./popup.js"></script>
+    </body>
 </html>

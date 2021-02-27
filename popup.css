@@ -17,6 +17,7 @@ body {
 .popup {
   background-color: var(--blue);
   color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .tabs-menu ul {
@@ -39,7 +40,9 @@ body {
   transition: background-color 250ms;
 }
 
-.tabs-menu button:hover {
+.tabs-menu button:hover,
+.tabs-menu button:focus {
+  outline: 1px solid gold;
   background-color: #555;
 }
 
@@ -48,7 +51,7 @@ body {
 }
 
 .tabs-content {
-  max-height: 500px;
+  /* max-height: 500px; */
 }
 
 .tab {
