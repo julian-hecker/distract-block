@@ -40,9 +40,23 @@
                 </nav>
             </div>
             <div class="tabs-content">
-                <div class="tab active" id="todo-tab"></div>
-                <div class="tab" id="timer-tab"></div>
-                <div class="tab" id="sites-tab"></div>
+                <div class="tab active" id="todo-tab">
+                    <div class="todo-wrapper">
+                        <div class="input-wrapper">
+                            <ul id="todo-list-ul"></ul>
+                            <div class="input-bar-wrapper">
+                                <input
+                                    id="input-bar"
+                                    type="text"
+                                    placeholder="Add new task"
+                                />
+                                <button id="enter-button">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab" id="timer-tab">timer</div>
+                <div class="tab" id="sites-tab">sites</div>
             </div>
         </div>
         <script type="text/javascript" src="./popup.js"></script>

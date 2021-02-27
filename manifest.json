@@ -1,25 +1,26 @@
 {
-  "name": "Distract Block",
-  "description": "Block distracting websites with ease!",
-  "version": "1.0.0",
-  "manifest_version": 3,
-  "permissions": ["storage", "tabs"],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "browser_action": {
-    "default_icon": {
-      "16": "",
-      "24": "",
-      "32": ""
+    "name": "Distract Block",
+    "description": "Block distracting websites with ease!",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "permissions": ["storage", "tabs"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
     },
-    "default_title": "Distract Block",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ]
+    "browser_action": {
+        "default_icon": {
+            "16": "",
+            "24": "",
+            "32": ""
+        },
+        "default_title": "Distract Block",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
 }
