@@ -104,7 +104,7 @@ const workTimeInput = document.getElementById('work-time-input');
 const breakTimeInput = document.getElementById('break-time-input');
 
 const handleStartTimer = (e) => {
-    TIME_LIMIT = parseInt(workTimeInput.value) /* *60 */;
+    TIME_LIMIT = parseInt(workTimeInput.value) * 60;
     startWorkTimer();
     stopTimerButton.style.display = 'block';
     startTimerButton.style.display = 'none';
@@ -193,7 +193,7 @@ function startWorkTimer() {
 function startBreakTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
-        timeLeft = parseInt(breakTimeInput.value) - timePassed;
+        timeLeft = parseInt(breakTimeInput.value) * 60 - timePassed;
         document.getElementById(
             'base-timer-label',
         ).innerHTML = formatTime(timeLeft);
