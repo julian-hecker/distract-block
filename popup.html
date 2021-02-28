@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Distract Block</title>
-        <link rel="stylesheet" href="./popup.css" />
-    </head>
-    <body>
-        <div class="popup">
-            <div class="tabs-menu">
-                <nav>
-                    <ul>
-                        <li>
-                            <button
-                                class="tab-button active"
-                                id="todo-button"
-                                data-activates="todo-tab"
-                            >
-                                Todo
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                class="tab-button"
-                                id="timer-button"
-                                data-activates="timer-tab"
-                            >
-                                Timer
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                class="tab-button"
-                                id="sites-button"
-                                data-activates="sites-tab"
-                            >
-                                Sites
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+  <head>
+    <title>Distract Block</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <div class="tabs-menu">
+        <nav>
+          <ul>
+            <li>
+              <button
+                class="tab-button active"
+                id="todo-button"
+                data-activates="todo-tab"
+              >
+                Todo
+              </button>
+            </li>
+            <li>
+              <button
+                class="tab-button"
+                id="timer-button"
+                data-activates="timer-tab"
+              >
+                Timer
+              </button>
+            </li>
+            <li>
+              <button
+                class="tab-button"
+                id="sites-button"
+                data-activates="sites-tab"
+              >
+                Sites
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="tabs-content">
+        <div class="tab active" id="todo-tab">
+          <div class="todo-wrapper">
+            <div class="input-wrapper">
+              <ul id="todo-list-ul"></ul>
+              <div class="input-bar-wrapper">
+                <input id="input-bar" type="text" placeholder="Add new task" />
+                <button id="enter-button">+</button>
+              </div>
             </div>
-            <div class="tabs-content">
-                <div class="tab active" id="todo-tab">
-                    <div class="todo-wrapper">
-                        <div class="input-wrapper">
-                            <ul id="todo-list-ul"></ul>
-                            <div class="input-bar-wrapper">
-                                <input
-                                    id="input-bar"
-                                    type="text"
-                                    placeholder="Add new task"
-                                />
-                                <button id="enter-button">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab" id="timer-tab">timer</div>
-                <div class="tab" id="sites-tab">sites</div>
-            </div>
+          </div>
         </div>
-        <script type="text/javascript" src="./popup.js"></script>
-    </body>
+        <div class="tab" id="timer-tab">
+          <div class="timer-wrapper">
+            <div id="app"></div>
+            <div class="label-container">
+              <label for="work-time-input">Work Time (min)</label>
+              <label for="work-time-input">Break Time (min)</label>
+            </div>
+            <div class="input-container">              
+              <input type="text" id="work-time-input">
+              <input type="text" id="break-time-input">
+            </div>
+            <div class="timer-btn-wrapper">
+              <button id="start-timer-btn">Start</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab" id="sites-tab">sites</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./popup.js"></script>
+  </body>
 </html>
