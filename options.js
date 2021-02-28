@@ -13,10 +13,8 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 options = {
-    whitelist: [
-        'google.com',
-    ],
-    blacklist: ['facebook.com'],
+    whitelist: ['google.com',],
+    blacklist: ['facebook.com',],
     preferences: {
         alwaysCheck: true,
     },
@@ -52,3 +50,41 @@ chrome.storage.sync.get(['options'], function (response) {
         preferencesUl.appendChild(preferenceListing);
     }
 });
+
+
+// carlos
+const whitelistLocator = document.getElementById('whitelist-ul');
+const addToWhitelist = document.getElementById('whitelist-btn');
+const blacklistLocator = document.getElementById('blacklist-ul')
+const addToBlacklist = document.getElementById('blacklist-btn');
+const input = document.getElementById('add-websites-input');
+
+addToWhitelist.addEventListener('click', () => {
+    if (input.value.length > 0) {
+        CreateWhitelistElement();
+    }
+});
+
+const CreateWhitelistElement = () => {
+    const listItem = document.createElement('li');
+    const listItemContent = document.createTextNode(input.value);
+    listItem.appendChild(listItemContent);
+    whitelistLocator.appendChild(listItem);
+    options['whitelist'].push(input.value);
+    input.value = "";
+};
+
+addToBlacklist.addEventListener('click', () => {
+    if (input.value.length > 0) {
+        CreateBlacklistElement();
+    }
+});
+
+const CreateBlacklistElement = () => {
+    const listItem = document.createElement('li');
+    const listItemContent = document.createTextNode(input.value);
+    listItem.appendChild(listItemContent);
+    blacklistLocator.appendChild(listItem);
+    options['blacklist'].push(input.value);
+    input.value = "";
+};
