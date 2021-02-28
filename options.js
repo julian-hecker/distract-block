@@ -52,7 +52,6 @@ chrome.storage.sync.get(['options'], function (response) {
 });
 
 
-// carlos
 const whitelistLocator = document.getElementById('whitelist-ul');
 const addToWhitelist = document.getElementById('whitelist-btn');
 const blacklistLocator = document.getElementById('blacklist-ul')
@@ -72,6 +71,11 @@ const CreateWhitelistElement = () => {
     whitelistLocator.appendChild(listItem);
     options['whitelist'].push(input.value);
     input.value = "";
+    listItem.addEventListener("dblclick", () => {
+		whitelistLocator.removeChild(listItem);
+        const listItemIndex = options.whitelist.indexOf(listItem);
+        options.whitelist.splice(listItemIndex, 1);
+	});
 };
 
 addToBlacklist.addEventListener('click', () => {
@@ -87,4 +91,9 @@ const CreateBlacklistElement = () => {
     blacklistLocator.appendChild(listItem);
     options['blacklist'].push(input.value);
     input.value = "";
+    listItem.addEventListener("dblclick", () => {
+		blacklistLocator.removeChild(listItem);
+        const listItemIndex = options.blacklist.indexOf(listItem);
+        options.blacklist.splice(listItemIndex, 1);
+	});
 };
