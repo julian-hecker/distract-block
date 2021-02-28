@@ -35,9 +35,11 @@ let todos = [];
 
 const loadTodos = () => {
     chrome.storage.sync.get(['todos'], (res) => {
-        todos = res.todos;
-        for (todo of todos) {
-            CreateNewListItem(todo);
+        if (res.todos) {
+            todos = res.todos;
+            for (todo of todos) {
+                CreateNewListItem(todo);
+            }
         }
     });
 };
