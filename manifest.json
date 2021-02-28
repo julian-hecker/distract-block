@@ -4,16 +4,22 @@
     "version": "1.0.0",
     "manifest_version": 2,
     "permissions": ["storage", "tabs"],
+    "icons": {
+        "128": "logo128.png",
+        "32": "logo32.png",
+        "24": "logo24.png",
+        "16": "logo16.png"
+    },
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
     "browser_action": {
         "default_icon": {
-            "16": "logo16.png",
-            "24": "logo24.png",
+            "128": "logo128.png",
             "32": "logo32.png",
-            "128": "logo128.png"
+            "24": "logo24.png",
+            "16": "logo16.png"
         },
         "default_title": "Distract Block",
         "default_popup": "popup.html"

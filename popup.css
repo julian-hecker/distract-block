@@ -149,6 +149,12 @@ body {
   background-color: white;
 }
 
+.input-wrapper li.completed {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
+}
+
 /* .input-wrapper li::marker {
   color: white;
   font-size: 25px;
