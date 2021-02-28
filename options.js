@@ -50,6 +50,13 @@ chrome.storage.sync.get(['options'], function (response) {
         preferenceListing.textContent = `${preference}: ${options.preferences[preference]}`;
         preferencesUl.appendChild(preferenceListing);
     }
+
+    for (let site of whitelistUl.children) {
+        site.addEventListener('dblclick', handleRemoveFromWhitelist);
+    }
+    for (let site of blacklistUl.children) {
+        site.addEventListener('dblclick', handleRemoveFromBlacklist);
+    }
 });
 
 const whitelistLocator = document.getElementById('whitelist-ul');
@@ -70,12 +77,8 @@ const CreateWhitelistElement = () => {
     listItem.appendChild(listItemContent);
     whitelistLocator.appendChild(listItem);
     options['whitelist'].push(input.value);
-    input.value = "";
-    listItem.addEventListener("dblclick", () => {
-		whitelistLocator.removeChild(listItem);
-        const listItemIndex = options.whitelist.indexOf(listItem);
-        options.whitelist.splice(listItemIndex, 1);
-	});
+    input.value = '';
+    listItem.addEventListener('dblclick', handleRemoveFromWhitelist);
     chrome.storage.sync.set({ options: options });
 };
 
@@ -91,11 +94,24 @@ const CreateBlacklistElement = () => {
     listItem.appendChild(listItemContent);
     blacklistLocator.appendChild(listItem);
     options['blacklist'].push(input.value);
-    input.value = "";
-    listItem.addEventListener("dblclick", () => {
-		blacklistLocator.removeChild(listItem);
-        const listItemIndex = options.blacklist.indexOf(listItem);
-        options.blacklist.splice(listItemIndex, 1);
-	});
+    input.value = '';
+    listItem.addEventListener('dblclick', handleRemoveFromBlacklist);
+    chrome.storage.sync.set({ options: options });
+};
+
+const handleRemoveFromWhitelist = (e) => {
+    const listItem = e.target;
+    whitelistLocator.removeChild(listItem);
+    const listItemIndex = options.whitelist.indexOf(listItem);
+    options.whitelist.splice(listItemIndex, 1);
+    chrome.storage.sync.set({ options: options });
+};
+
+const handleRemoveFromBlacklist = (e) => {
+    const listItem = e.target;
+    blacklistLocator.removeChild(listItem);
+    const listItemIndex = options.blacklist.indexOf(listItem);
+    options.blacklist.splice(listItemIndex, 1);
+    console.log(options);
     chrome.storage.sync.set({ options: options });
 };
