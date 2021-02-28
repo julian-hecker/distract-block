@@ -3,6 +3,7 @@
     "description": "Block distracting websites with ease!",
     "version": "1.0.0",
     "manifest_version": 2,
+	"options_page": "options.html",
     "permissions": ["storage", "tabs"],
     "icons": {
         "128": "logo128.png",
