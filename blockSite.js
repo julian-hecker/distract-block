@@ -39,6 +39,11 @@ overlay.innerHTML = `
         font-size: 1.5em;
         font-weight: bolder;
     }
+    
+    #distract-overlay button:hover {
+        opacity: 0.7;
+    }
+
     #distract-overlay p {
         color: inherit;
         margin-top: 0;
@@ -67,9 +72,6 @@ overlay.innerHTML = `
         </p>
         <button class="button-primary" id="button-back" autofocus>
             Go Back
-        </button>
-        <button class="button-secondary" id="button-settings">
-            Manage Extension Settings
         </button>
     </div>
 </div>

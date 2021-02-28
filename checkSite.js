@@ -39,6 +39,11 @@ overlay.innerHTML = `
         font-size: 1.5em;
         font-weight: bolder;
     }
+
+    #distract-overlay button:hover {
+        opacity: 0.7;
+    }
+
     #distract-overlay p {
         color: inherit;
         margin-top: 0;
@@ -74,14 +79,11 @@ overlay.innerHTML = `
         <button class="button-primary" id="button-back">
             Go Back
         </button>
-        <button class="button-primary" id="button-continue">
+        <button class="button-secondary" id="button-continue">
             Continue Once
         </button>
         <button class="button-blacklist" id="button-blacklist">
             Add to <strong>Blacklist</strong> and Go Back
-        </button>
-        <button class="button-secondary" id="button-settings">
-            Manage Extension Settings
         </button>
     </div>
 </div>

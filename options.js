@@ -13,10 +13,11 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 options = {
-    whitelist: ['google.com',],
-    blacklist: ['facebook.com',],
+    whitelist: ['google.com'],
+    blacklist: ['facebook.com'],
     preferences: {
         alwaysCheck: true,
+        enabled: true,
     },
 };
 
@@ -51,11 +52,10 @@ chrome.storage.sync.get(['options'], function (response) {
     }
 });
 
-
 // carlos
 const whitelistLocator = document.getElementById('whitelist-ul');
 const addToWhitelist = document.getElementById('whitelist-btn');
-const blacklistLocator = document.getElementById('blacklist-ul')
+const blacklistLocator = document.getElementById('blacklist-ul');
 const addToBlacklist = document.getElementById('blacklist-btn');
 const input = document.getElementById('add-websites-input');
 
@@ -71,7 +71,8 @@ const CreateWhitelistElement = () => {
     listItem.appendChild(listItemContent);
     whitelistLocator.appendChild(listItem);
     options['whitelist'].push(input.value);
-    input.value = "";
+    input.value = '';
+    chrome.storage.sync.set({ options: options });
 };
 
 addToBlacklist.addEventListener('click', () => {
@@ -86,5 +87,6 @@ const CreateBlacklistElement = () => {
     listItem.appendChild(listItemContent);
     blacklistLocator.appendChild(listItem);
     options['blacklist'].push(input.value);
-    input.value = "";
+    input.value = '';
+    chrome.storage.sync.set({ options: options });
 };
