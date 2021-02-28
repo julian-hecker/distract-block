@@ -137,7 +137,6 @@ body {
   justify-content: space-between;
   width: 100%;
   padding-left: 3px;
-  max-width: 280px;
   background-color: lightgray;
   border: none;
   color: black;
@@ -149,7 +148,6 @@ body {
 .input-wrapper li:nth-of-type(even) {
   background-color: white;
 }
-
 
 .input-wrapper li.completed {
   text-decoration: line-through;
@@ -247,7 +245,7 @@ body {
 
 .input-container input {
   width: 140px;
-  height: 35px; 
+  height: 35px;
 }
 
 #break-time-input {
@@ -267,6 +265,16 @@ body {
   background-color: rgb(0, 252, 44);
   border-style: none;
   font-size: 20px;
+}
+#stop-timer-btn {
+  display: none;
+  height: 30px;
+  width: 100px;
+  margin-top: 15px;
+  color: white;
+  border-style: none;
+  font-size: 20px;
+  background-color: red;
 }
 
 #start-timer-btn:hover {
