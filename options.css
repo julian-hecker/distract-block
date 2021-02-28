@@ -24,6 +24,10 @@ body {
     font-size: 200%;
 }
 
+.options-container h1 {
+    color: white;
+}
+
 .accordion {
     background-color: white;
     color: var(--blue);
