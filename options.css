@@ -20,6 +20,8 @@ body {
     margin: auto;
     max-width: 900px;
     padding: 1rem;
+    color: var(--blue);
+    font-size: 200%;
 }
 
 .accordion {
@@ -29,9 +31,9 @@ body {
     padding: 18px;
     width: 100%;
     border: none;
+    font-size: inherit;
     text-align: left;
     outline: none;
-    font-size: 15px;
     font-weight: bolder;
     transition: 0.4s;
 }
@@ -57,4 +59,19 @@ body {
     display: none;
     background-color: white;
     overflow: hidden;
+}
+
+.panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.panel li {
+    padding: 0.5rem 0;
+    background-color: white;
+}
+
+.panel li:nth-of-type(even) {
+    background-color: lightgrey;
 }
